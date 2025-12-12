@@ -1,6 +1,6 @@
 # Walmart Sales Forecasting using the Best ML algorithms
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4037440c-131c-4f0f-843b-9eeeac75fcb8" />
+
 
 ## 🌐 Live App
 You can access the project here: 👉 [Walmart Sales Predictor](https://walmartsalespredictor.streamlit.app/)
