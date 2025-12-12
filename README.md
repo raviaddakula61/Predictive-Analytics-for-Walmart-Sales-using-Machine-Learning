@@ -4,7 +4,7 @@
 
 
 ## 🌐 Live App
-You can access the project here: 👉 [Walmart Sales Predictor]([https://walmartsalespredictor.streamlit.app/](https://walmart-weekly-sales-prediction.streamlit.app/))
+You can access the project here: 👉 [Walmart Sales Predictor](https://walmartsalespredictor.streamlit.app/](https://walmart-weekly-sales-prediction.streamlit.app/)
 
 # 🏬 Walmart Weekly Sales Forecasting using Machine Learning
 
