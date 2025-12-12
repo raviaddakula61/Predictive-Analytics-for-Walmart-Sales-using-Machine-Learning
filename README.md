@@ -1,40 +1,101 @@
 # Walmart Sales Forecasting using the Best ML algorithms
 
+<img width="336" height="686" alt="image" src="https://github.com/user-attachments/assets/2fa071af-a739-4743-b87c-9514c8044dea" />
 
 
 ## 🌐 Live App
 You can access the project here: 👉 [Walmart Sales Predictor](https://walmartsalespredictor.streamlit.app/)
 
-## Objective
+Objective
 
-The objective of this project is to develop a Walmart sales forecasting model using the best machine learning algorithms. The project involves understanding and cleaning up the dataset, building regression models to predict sales based on single and multiple features, evaluating model performance using metrics like RMSE, and performing data exploration, manipulation, feature selection, and predictive modeling. The project aims to provide insights into the dataset and conclude with reliable sales forecasts for Walmart.
+Build an end-to-end Walmart Weekly Sales Forecasting system using regression-based machine learning models. The project covers data cleaning, feature engineering, model training, and model comparison using RMSE as the primary evaluation metric, ultimately selecting the best-performing model for reliable sales prediction.
 
-## Description:
+Project Description
 
-One of the leading retail stores in the US, Walmart, would like to predict the sales and demand accurately. There are certain events and holidays which impact sales on each day. There are sales data available for 45 stores of Walmart. The business is facing a challenge due to unforeseen demands and runs out of stock some times, due to the inappropriate machine learning algorithm. An ideal ML algorithm will predict demand accurately and ingest factors like economic conditions including CPI, Unemployment Index, etc.
+Walmart, one of the largest retail chains in the US, aims to predict weekly sales and demand accurately across 45 stores. Sales are strongly affected by holidays and special events, and Walmart also runs markdown promotions that influence demand—especially around key holidays such as Super Bowl, Labour Day, Thanksgiving, and Christmas.
 
-Walmart runs several promotional markdown events throughout the year. These markdowns precede prominent holidays, the four largest of all, which are the Super Bowl, Labour Day, Thanksgiving, and Christmas. The weeks including these holidays are weighted five times higher in the evaluation than non-holiday weeks. Part of the challenge presented by this competition is modeling the effects of markdowns on these holiday weeks in the absence of complete/ideal historical data. Historical sales data for 45 Walmart stores located in different regions are available.
+A major challenge is stock-outs and poor planning caused by inaccurate forecasting. This project builds a robust ML pipeline that incorporates external factors like CPI, unemployment rate, fuel price, and temperature to improve prediction accuracy.
 
-### Dataset Info:
-This is the historical data that covers sales from 2010-02-05 to 2012-11-01, in the files 'stores' and 'features'. Within this file you will find the following fields :-
+Additionally, holiday weeks are weighted higher than non-holiday weeks, so modeling holiday impact is crucial for strong performance.
 
-* Store - the store number
-* Date - the week of sales
-* Weekly_Sales -  sales for the given store
-* IsHoliday - whether the week is a special holiday week 1 – Holiday week 0 – Non-holiday week
-* Temperature - Temperature on the day of sale
-* Fuel_Price - Cost of fuel in the region
-* CPI – Prevailing consumer price index
-* Unemployment - Prevailing unemployment rate
+Dataset Information
 
-## Strategic Planning
+Historical sales data spans 2010-02-05 to 2012-11-01 using the following files:
 
-We aim to solve the problem statement by creating a plan of action, Here are some of the necessary steps:
+Key Fields
 
-1. Importing Libraries
-2. Loading Dataset
-3. Data Exploration
-4. Data Preprocessing
-5. Feature Selection/Extraction
-6. Predictive Modelling
-7. Project Outcomes & Conclusion
+Store: store ID (1–45)
+
+Date: week of sales
+
+Weekly_Sales: target variable (sales)
+
+IsHoliday: 1 = holiday week, 0 = non-holiday week
+
+Temperature: temperature during the week
+
+Fuel_Price: regional fuel cost
+
+CPI: consumer price index
+
+Unemployment: unemployment rate
+
+Markdown1–5: promotional markdown events (partially missing)
+
+Strategic Planning (Workflow)
+
+Import Libraries (Pandas, NumPy, Scikit-learn, XGBoost, CatBoost, LightGBM)
+
+Load & Merge Datasets (train + features + stores)
+
+Data Exploration (EDA)
+
+sales distribution, holidays effect, store-level trends
+
+Data Preprocessing
+
+handle missing values (esp. markdowns), encoding, scaling where required
+
+Feature Selection / Engineering
+
+date features (year, month, week), store size/type, promotion indicators
+
+Predictive Modeling
+
+train multiple regressors and tune key hyperparameters
+
+Evaluation & Model Selection
+
+compare models using RMSE, pick best model
+
+Conclusion & Insights
+
+summarize best model + business takeaways
+
+Model Evaluation Metrics (RMSE)
+
+RMSE scores obtained:
+
+Linear Regression (LR): 21806.1429
+
+XGBoost (XGB): 5230.9802
+
+CatBoost (CB): 5579.4671
+
+LightGBM (LGB): 6812.8976
+
+Random Forest Regressor (RFR): 3636.2488
+
+✅ Models Ranked by Performance (Best → Worst)
+
+RFR: 3636.2488
+
+XGB: 5230.9802
+
+CB: 5579.4671
+
+LGB: 6812.8976
+
+LR: 21806.1429
+
+Key takeaway: Tree-based ensemble models dramatically outperform linear regression due to non-linear sales patterns, store-level variation, and holiday/promotion effects.
