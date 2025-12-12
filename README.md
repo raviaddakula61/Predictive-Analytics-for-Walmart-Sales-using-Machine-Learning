@@ -6,96 +6,131 @@
 ## 🌐 Live App
 You can access the project here: 👉 [Walmart Sales Predictor](https://walmartsalespredictor.streamlit.app/)
 
-Objective
+# 🏬 Walmart Weekly Sales Forecasting using Machine Learning
 
-Build an end-to-end Walmart Weekly Sales Forecasting system using regression-based machine learning models. The project covers data cleaning, feature engineering, model training, and model comparison using RMSE as the primary evaluation metric, ultimately selecting the best-performing model for reliable sales prediction.
+## 📌 Objective
+Build an **end-to-end Walmart Weekly Sales Forecasting system** using **regression-based machine learning models**.  
+The project covers **data cleaning, feature engineering, model training, evaluation, and comparison** using **RMSE** as the primary metric, ultimately selecting the **best-performing model** for reliable sales prediction.
 
-Project Description
+---
 
-Walmart, one of the largest retail chains in the US, aims to predict weekly sales and demand accurately across 45 stores. Sales are strongly affected by holidays and special events, and Walmart also runs markdown promotions that influence demand—especially around key holidays such as Super Bowl, Labour Day, Thanksgiving, and Christmas.
+## 📖 Project Description
+Walmart, one of the largest retail chains in the US, aims to **predict weekly sales and demand accurately** across **45 stores**.  
+Sales are heavily influenced by **holidays, promotional markdowns, and economic factors** such as **CPI, fuel prices, temperature, and unemployment rate**.
 
-A major challenge is stock-outs and poor planning caused by inaccurate forecasting. This project builds a robust ML pipeline that incorporates external factors like CPI, unemployment rate, fuel price, and temperature to improve prediction accuracy.
+Inaccurate forecasting leads to **stock-outs and inefficient inventory planning**.  
+This project addresses these challenges by building a **robust machine learning pipeline** that captures:
+- Holiday and seasonal effects  
+- Promotional markdown impacts  
+- Store-level variations  
+- Macroeconomic indicators  
 
-Additionally, holiday weeks are weighted higher than non-holiday weeks, so modeling holiday impact is crucial for strong performance.
+Special focus is given to major holidays:
+- **Super Bowl**
+- **Labour Day**
+- **Thanksgiving**
+- **Christmas**
 
-Dataset Information
+---
 
-Historical sales data spans 2010-02-05 to 2012-11-01 using the following files:
+## 📊 Dataset Information
+Historical sales data from **2010-02-05 to 2012-11-01**.
 
-Key Fields
+### Key Fields
+- **Store**: Store ID (1–45)  
+- **Dept**: Department number  
+- **Date**: Week of sales  
+- **Weekly_Sales**: Target variable  
+- **IsHoliday**: 1 = Holiday week, 0 = Non-holiday week  
+- **Temperature**: Weekly average temperature  
+- **Fuel_Price**: Regional fuel cost  
+- **CPI**: Consumer Price Index  
+- **Unemployment**: Unemployment rate  
+- **MarkDown1–5**: Promotional markdown events (partially missing)  
+- **Type**: Store category (A/B/C)  
+- **Size**: Store size  
 
-Store: store ID (1–45)
+---
 
-Date: week of sales
+## 🔄 Project Workflow
+1. **Import Libraries**  
+   - Pandas, NumPy, Scikit-learn  
+   - XGBoost, CatBoost, LightGBM  
 
-Weekly_Sales: target variable (sales)
+2. **Load & Merge Datasets**  
+   - Combine `train`, `features`, and `stores`  
 
-IsHoliday: 1 = holiday week, 0 = non-holiday week
+3. **Exploratory Data Analysis (EDA)**  
+   - Sales distribution  
+   - Holiday vs non-holiday impact  
+   - Store-level trends  
 
-Temperature: temperature during the week
+4. **Data Preprocessing**  
+   - Handle missing values (Markdowns)  
+   - Encode categorical features  
+   - Feature scaling where required  
 
-Fuel_Price: regional fuel cost
+5. **Feature Engineering**  
+   - Date features (Year, Month, Week)  
+   - Promotion indicators  
+   - Store size and type  
 
-CPI: consumer price index
+6. **Predictive Modeling**  
+   - Linear Regression  
+   - Random Forest Regressor  
+   - XGBoost  
+   - CatBoost  
+   - LightGBM  
 
-Unemployment: unemployment rate
+7. **Model Evaluation & Selection**  
+   - Evaluate using **RMSE**  
+   - Compare model performance  
+   - Select best-performing model  
 
-Markdown1–5: promotional markdown events (partially missing)
+---
 
-Strategic Planning (Workflow)
+## 📈 Model Evaluation Metrics (RMSE)
 
-Import Libraries (Pandas, NumPy, Scikit-learn, XGBoost, CatBoost, LightGBM)
+| Model | RMSE |
+|-----|------|
+| **Random Forest Regressor** | **3636.2488** |
+| XGBoost | 5230.9802 |
+| CatBoost | 5579.4671 |
+| LightGBM | 6812.8976 |
+| Linear Regression | 21806.1429 |
 
-Load & Merge Datasets (train + features + stores)
+### 🏆 Models Ranked by Performance
+1. **Random Forest Regressor**
+2. XGBoost
+3. CatBoost
+4. LightGBM
+5. Linear Regression
 
-Data Exploration (EDA)
+**Key Insight:**  
+Tree-based ensemble models significantly outperform linear regression due to **non-linear sales patterns, store-level variation, and holiday/promotion effects**.
 
-sales distribution, holidays effect, store-level trends
+---
 
-Data Preprocessing
+## 📌 Key Insights
+- Weekly sales show **high variance and right-skewness**
+- Store size and store type strongly influence demand
+- Holiday and promotion weeks create sharp sales spikes
+- Economic indicators help capture long-term trends
+- Ensemble models provide better generalization
 
-handle missing values (esp. markdowns), encoding, scaling where required
+---
 
-Feature Selection / Engineering
+## ✅ Conclusion
+- Built a complete **machine learning pipeline** for Walmart weekly sales forecasting  
+- Demonstrated the superiority of **ensemble regression models**  
+- **Random Forest Regressor** achieved the best performance with the **lowest RMSE**  
+- The system supports **better inventory planning and demand forecasting**
 
-date features (year, month, week), store size/type, promotion indicators
+---
 
-Predictive Modeling
+## 🧠 One-Line Project Pitch
+> *An end-to-end machine learning system that forecasts Walmart weekly sales by leveraging store data, promotions, holidays, and economic indicators using ensemble regression models.*
 
-train multiple regressors and tune key hyperparameters
+---
 
-Evaluation & Model Selection
-
-compare models using RMSE, pick best model
-
-Conclusion & Insights
-
-summarize best model + business takeaways
-
-Model Evaluation Metrics (RMSE)
-
-RMSE scores obtained:
-
-Linear Regression (LR): 21806.1429
-
-XGBoost (XGB): 5230.9802
-
-CatBoost (CB): 5579.4671
-
-LightGBM (LGB): 6812.8976
-
-Random Forest Regressor (RFR): 3636.2488
-
-✅ Models Ranked by Performance (Best → Worst)
-
-RFR: 3636.2488
-
-XGB: 5230.9802
-
-CB: 5579.4671
-
-LGB: 6812.8976
-
-LR: 21806.1429
-
-Key takeaway: Tree-based ensemble models dramatically outperform linear regression due to non-linear sales patterns, store-level variation, and holiday/promotion effects.
+## 📁 Repository Structure
