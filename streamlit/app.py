@@ -25,7 +25,7 @@ st.sidebar.header("Input Features")
 
 def user_input_features():
     Week = st.sidebar.slider("Week of Year", 1, 52, 1)
-    CPI = st.sidebar.number_input("CPI", 200.0, 300.0, 220.0)
+    CPI = st.sidebar.number_input("CPI",100, 300.0, 220.0)
     Unemployment = st.sidebar.number_input("Unemployment Rate (%)", 3.0, 15.0, 6.0)
     Size = st.sidebar.number_input("Store Size (sq.ft.)", 5000, 250000, 100000)
     Type = st.sidebar.selectbox("Store Type", ["A", "B", "C"])
