@@ -3,8 +3,9 @@
 <img width="336" height="686" alt="image" src="https://github.com/user-attachments/assets/2fa071af-a739-4743-b87c-9514c8044dea" />
 
 
-## 🌐 Live App
-You can access the project here: 👉 [Walmart Sales Predictor](https://walmartsalespredictor.streamlit.app/](https://walmart-weekly-sales-prediction.streamlit.app/)
+## 🚀 Live Demo
+
+👉 **[Click here to try the Walmart Weekly Sales Predictor](https://walmart-weekly-sales-prediction.streamlit.app/)**
 
 # 🏬 Walmart Weekly Sales Forecasting using Machine Learning
 
